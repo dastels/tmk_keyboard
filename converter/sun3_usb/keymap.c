@@ -95,66 +95,34 @@ static const uint8_t PROGMEM fn_keycode[] = {
 static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(
-    F10, F11,   F1, F2,     F3,     F4,     F5,     F6,      F7,  F8, F9,  BSPC,   VOLD, MUTE,   VOLU,
-    F12, F13,   ESC, 1,  2,  3,  4,  5,  6,  7,  8,  9,  0,MINS, EQL, BSLS, GRV,   MPRV, MPLY,   MNXT,
-    F14, F15,   TAB, Q,  W,  E,  R,  T,  Y,  U,  I,  O,  P,   LBRC,RBRC,    DEL,   HOME, UP,     PGUP,
-    F16, F17,   LCTL, A,  S,  D,  F,  G,  H,  J,  K,  L,  SCLN,QUOT,        ENT,   LEFT, INSERT, RIGHT, 
-    F18, F19,   LSFT,  Z,  X,  C,  V,  B,  N,  M,  COMM,DOT,SLSH,     RSFT,RCTL,   END,  DOWN,   PGDOWN,
-                LGUI, LALT,                 SPC,                      RALT,RGUI
+    FN0, FN1,   F1, F2,     F3,     F4,     F5,     F6,      F7,  F8, F9,    BSPC,   VOLD, MUTE,   VOLU,
+    FN2, FN3,   ESC, 1,  2,  3,  4,  5,  6,  7,  8,  9,  0, MINS, EQL, BSLS, GRV,    MPRV, MPLY,   MNXT,
+    FN4, FN5,   TAB, Q,  W,  E,  R,  T,  Y,  U,  I,  O,  P,   LBRC, RBRC,    DEL,    HOME, UP,     PGUP,
+    FN6, FN7,   DEL,  A,  S,  D,  F,  G,  H,  J,  K,  L,  SCLN, QUOT,        ENT,    LEFT, INSERT, RIGHT, 
+    FN8, FN9,   LSFT,  Z,  X,  C,  V,  B,  N,  M,  COMM, DOT, SLSH,   RSFT, RGUI,    END,  DOWN,   PGDOWN,
+                LALT, LCTL,                 SPC,                      RCTL, RALT
     ),
-    /*
-    // 0: default
-    SHORT_TYPE(
-        STOP, F1,F2,F3,F4, F5, F6,   CUT,PASTE,COPY,PWR,    INS, HOME,PGUP,
-              F7,F8,F9,F10,F11,F12,                         DEL, END, PGDN,
-        ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV,
-        TAB,  Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,    BSPC,
-        LCTL,  A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,        ENT,
-        LSFT,   Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,  RALT,UP,  RSFT,
-        CAPS,LALT,LGUI,            SPC,              RGUI,APP, NLCK,LEFT,DOWN,RGHT
-    ),
-    // 1: with layer keys
-    SHORT_TYPE(
-        ESC,  F1,F2,F3,F4, F5, F6,   CUT,PASTE,COPY,PWR,    INS, HOME,PGUP,
-              F7,F8,F9,F10,F11,F12,                         DEL, END, PGDN,
-        ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV,
-        TAB,  Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,    BSPC,
-        LCTL,  A,   S,   D,   F,   G,   H,   J,   K,   L,   FN1, QUOT,        ENT,
-        LSFT,   Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, FN2,   RSFT,UP,  FN0,
-        CAPS,LALT,LGUI,            SPC,              RGUI,RALT,FN0, LEFT,DOWN,RGHT
-    ),
-    // 2: HHKB
-    SHORT_TYPE(
-        ESC,  F1,F2,F3,F4, F5, F6,   CUT,PASTE,COPY,PWR,    INS, HOME,PGUP,
-              F7,F8,F9,F10,F11,F12,                         DEL, END, PGDN,
-        GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,
-        CAPS, NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS,UP,  NO,      BSPC,
-        LCTL,  VOLD,VOLU,MUTE,NO,  NO,  NO,  NO,  HOME,PGUP,LEFT,RGHT,        ENT,
-        LSFT,   Z,   X,   C,   V,   B,   NO,  NO,  END, PGDN,DOWN,  RSFT,PGUP,FN0,
-        CAPS,LALT,LGUI,            SPC,              RGUI,RALT,FN0, HOME,PGDN,END
-    ),
-    // 3: Mousekey
-    SHORT_TYPE(
-        ESC,  F1,F2,F3,F4, F5, F6,   CUT,PASTE,COPY,PWR,    INS, HOME,PGUP,
-              F7,F8,F9,F10,F11,F12,                         DEL, END, PGDN,
-        GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,
-        CAPS, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,WH_U,WH_R,NO,  NO,  NO,      BSPC,
-        LCTL,  NO,  ACL0,ACL1,ACL2,NO,  MS_L,MS_D,MS_U,MS_R,FN1, NO,          ENT,
-        LSFT,   NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,NO,  NO,  NO,    RSFT,UP,  NO,
-        CAPS,LALT,LGUI,            BTN1,             RGUI,RALT,NO,  LEFT,DOWN,RGHT
-    ),
-    // 4: Cursor
-    SHORT_TYPE(
-        ESC,  F1,F2,F3,F4, F5, F6,   CUT,PASTE,COPY,PWR,    INS, HOME,PGUP,
-              F7,F8,F9,F10,F11,F12,                         DEL, END, PGDN,
-        GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,
-        CAPS, NO,  NO,  NO,  NO,  NO,  HOME,PGDN,PGUP,END, NO,  NO,  NO,      BSPC,
-        LCTL,  NO,  NO,  NO,  NO,  NO,  LEFT,DOWN,UP,  RGHT,NO,  NO,          ENT,
-        LSFT,   NO,  NO,  NO,  NO,  NO,  HOME,PGDN,PGUP,END, FN2,   RSFT,UP,  NO,
-        CAPS,LALT,LGUI,            BTN1,             RGUI,RALT,NO,  LEFT,DOWN,RGHT
-    ),
-    */
 };
+
+
+static const uint16_t PROGMEM fn_actions[] = {
+  ACTION_MODS_KEY(MOD_LGUI, KC_T),    // FN0 (L1)  CMD-T New Tab
+  ACTION_MODS_KEY(MOD_LGUI, KC_N),    // FN1 (L2)  CMD-N New Window
+  ACTION_MODS_KEY(MOD_LGUI, KC_COMM), // FN2 (L3)  CMD-, Props
+  ACTION_MODS_KEY(MOD_LGUI, KC_Z),    // FN3 (L4)  CMD-Z Undo
+  ACTION_MODS_KEY(MOD_LGUI, KC_NO),   // FN4 (L5)  Front
+  ACTION_MODS_KEY(MOD_LGUI, KC_C),    // FN5 (L6)  CMD-C Copy
+  ACTION_MODS_KEY(MOD_LGUI, KC_O),    // FN6 (L7)  CMD-O Open
+  ACTION_MODS_KEY(MOD_LGUI, KC_V),    // FN7 (L8)  CMD-V Paste
+  ACTION_MODS_KEY(MOD_LGUI, KC_F),    // FN8 (L9)  CMD-F Find
+  ACTION_MODS_KEY(MOD_LGUI, KC_X),    // FN9 (L10) CMD-X Cut
+};
+
+/* translates Fn keycode to action */
+action_t keymap_fn_to_action(uint8_t keycode)
+{
+    return (action_t){ .code = pgm_read_word(&fn_actions[FN_INDEX(keycode)]) };
+}
 
 
 uint8_t keymap_get_keycode(uint8_t layer, uint8_t row, uint8_t col)
