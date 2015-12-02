@@ -98,9 +98,9 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     FN0, FN1,   F1, F2,     F3,     F4,     F5,     F6,      F7,    F8, F9, BSPC,    VOLD, MUTE,   VOLU,
     FN2, FN3,   ESC, 1,  2,  3,  4,  5,  6,  7,  8,  9,  0, MINS, EQL, BSLS, GRV,    MPRV, MPLY,   MNXT,
     FN4, FN5,   TAB, Q,  W,  E,  R,  T,  Y,  U,  I,  O,  P,   LBRC, RBRC,    DEL,    HOME, UP,     PGUP,
-    FN6, FN7,   LCTL,  A,  S,  D,  F,  G,  H,  J,  K,  L,  SCLN, QUOT,       ENT,    LEFT, INSERT, RIGHT, 
+    FN6, FN7,   LGUI,  A,  S,  D,  F,  G,  H,  J,  K,  L,  SCLN, QUOT,       ENT,    LEFT, INSERT, RIGHT, 
     FN8, FN9,   LSFT,  Z,  X,  C,  V,  B,  N,  M,  COMM, DOT, SLSH,   RSFT, RGUI,    END,  DOWN,   PGDOWN,
-                LALT, LGUI,                 SPC,                      RGUI, RALT
+                LALT, LCTL,                 SPC,                      RCTL, RALT
     ),
 };
 
